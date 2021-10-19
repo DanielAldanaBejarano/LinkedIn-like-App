@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba ImagineApps</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="./feed.js"></script>
+  </head>
+  <body>
+    <header>
+      <!-- Nav Bar -->
+      <div class="nav-bar" id="top-nav">
+        <!-- Logo and search bar -->
+        <div style="display: inline-flex; align-items: center">
+          <a href="#home">
+            <img
+              class="logo"
+              src="./Images/logo-imagineApps.webp"
+              alt="logo-imagineApps"
+            />
+          </a>
+          <img src="./Images/icons/search-icon.png" style="width: 1rem" class="logo">
+          <input
+            type="text"
+            id="search-box"
+            placeholder="Buscar"
+            style="width: 60%"
+          />
+          <!-- Responsive Button -->
+        <a href="javascript:void(0);" class="icon" onclick="responsive()"
+        >&#9776;</a      >         
+        </div>
+        
+        <!-- Links -->
+        <div class="linksContainer">
+          <a href="#home" class="active">Inicio</a>
+          <a href="#red">Mi Red</a>
+          <a href="#jobs">Empleos</a>
+          <a href="#messages">Mensajes</a>
+          <a href="#notifications">Notificaciones</a>
+          <a href="#profile">Yo</a>    
+        </div>
+        
+      </div>
+    </header>
+    <!-- Main Section -->
+    <section class="main-sec">
+      <!-- Left col -->
+      <div class="col-3">
+        <!-- Profile module -->
+        <div class="module">
+          <div class="content">
+            <img src="./Images/Profile.jpg" class="profile-img" style="width: 50%;"/>
+            <h1>Daniel Aldana Bejarano</h1>
+            <h5>Desarrollador Full Stack Junior</h5>
+            <h4>Visitas</h4>
+            <p style="text-align: center;">100</p>
+            <h4>Publicaciones</h4>
+            <p style="text-align: center;" id="publications"></p>
+          </div>
+        </div>
+        <!-- My post module -->
+        <div class="module">
+          <h1>Tus post</h1>
+          <div class="content" id="myPosts"></div>
+        </div>
+      </div>
+      <!-- Center col -->
+      <div class="col-6">
+        <!-- Create post module -->
+        <div class="module">
+            <div class="content">
+                <div class="post-top">
+                    <img src="./Images/Profile.jpg" class="profile-img" />
+                    <textarea
+                      class="msj"
+                      name="msj"
+                      id="inputPost"
+                      placeholder="Crear publicación"
+                    ></textarea>
+                  </div>
+                  <div class="post-bottom">
+                    <!-- Post icons -->
+                    <button type="button">
+                      <img src="./Images/icons/image-icon.png" class="icon"/>
+                      Foto
+                    </button>
+                    <button type="button">
+                      <img src="./Images/icons/video-icon.png" class="icon" />
+                      Video
+                    </button>
+                    <button type="button">
+                      <img src="./Images/icons/article-icon.png" class="icon" />
+                      Artículo
+                    </button>
+                    <!-- Submit Post Button -->
+                    <button id="submitBtn" onclick="addPost()">
+                      Publicar
+                    </button>
+                  </div>
+            </div>
+          
+        </div>
+        <!-- Filter posts -->
+        <div class="dropdown">
+          <span>Ordernar por fecha</span>
+          <div class="dropdown-content">
+            <button class="btn filter" onclick="sortAsc()">Ascendente</button>
+            <button class="btn filter" onclick="sortDes()">Descendente</button>
+          </div>
+        </div>
+        <!-- Posts feed -->
+        <div
+          style="display: flex; flex-direction: column"
+          id="feed-container"
+        ></div>
+      </div>
+      <!-- Right col -->
+      <div class="col-3">
+        <div class="module">
+          <h1>Trending</h1>
+          <div class="content" id="trending"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
